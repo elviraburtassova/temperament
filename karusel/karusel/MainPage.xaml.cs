@@ -11,17 +11,11 @@ namespace karusel
 {
 	public partial class MainPage : CarouselPage
 	{
-	    Image img1, img2, img3, img4, img5;
 		Button btn1, btn2, btn3, btn4, btn5;
 
 		public MainPage()
 		{
 			//--------------------------------------------------------
-			img1 = new Image
-			{
-				Source = "holer.jpg",
-
-			};
 
 			btn1 = new Button
 			{
@@ -38,29 +32,29 @@ namespace karusel
 					BackgroundColor = Color.Red,
 					Children =
 					{
-						{
 							new Label
 							{
 								Text = "Холерик",
 								TextColor= Color.DarkRed,// текст
 								FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)),
 								HorizontalOptions = LayoutOptions.Center
-							}
+							},
+
+							new Image
+                            {
+								Source = "holer.jpg",
+							},
+
+							btn1
+	                     	}
 						}
-					}
-				}
 			};
 
-			// -----------------------------------------------------------
-			img2 = new Image
-			{
-				Source = "sang.jpg",
-			};
-
+			// -----------------------------------------------------------	
 			btn2 = new Button
 			{
 				BackgroundColor = Color.GreenYellow,
-				TextColor = Color.LightGreen,
+				TextColor = Color.Green,
 				Text = "О сангвиниках",
 			};
 			btn2.Clicked += Btn2_Clicked;
@@ -75,24 +69,25 @@ namespace karusel
 					 new Label
 						{
 							Text = "Сангвиник", // текст
-							TextColor= Color.Yellow,
+							TextColor= Color.Orange,
 							FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
 							HorizontalOptions = LayoutOptions.Center
 						},
-					}
+					 
+					 new Image
+                     {
+						 Source = "sang.jpg",
+					},
+					 btn2
+				}
 				}
 			};
 
 			//------------------------------------------------------------------
-			img3 = new Image
-			{
-				Source = "plegm.jpg"
-			};
-
 			btn3 = new Button
 			{
-				BackgroundColor = Color.GreenYellow,
-				TextColor = Color.LightGreen,
+				BackgroundColor = Color.MediumPurple,
+				TextColor = Color.Black,
 				Text = "О флегматиках"
 			};
 			btn3.Clicked += Btn3_Clicked;
@@ -111,20 +106,21 @@ namespace karusel
 							FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
 							HorizontalOptions = LayoutOptions.Center
 						},
+						new Image
+                        {
+							Source = "plegm.jpg",
+						},
+
+						btn3
 				}
 				}
 			};
 
 			//-------------------------------------------------------------------
-			img4 = new Image
+	btn4 = new Button
 			{
-				Source = "melanh.jpg",
-			};
-
-			btn4 = new Button
-			{
-				BackgroundColor = Color.GreenYellow,
-				TextColor = Color.LightGreen,
+				BackgroundColor = Color.LightSeaGreen,
+				TextColor = Color.Black,
 				Text = "О меланхоликах"
 			};
 			btn4.Clicked += Btn4_Clicked;
@@ -143,17 +139,17 @@ namespace karusel
 							FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
 							HorizontalOptions = LayoutOptions.Center
 						},
-					}
+						 new Image
+			{
+				Source = "melanh.jpg",
+			},
+						 btn4
+		}
 				}
 			};
 
 			//---------------------------------------------------------------
-			img5 = new Image
-			{
-				Source = "temp.jpg",
-			};
-
-			btn5 = new Button
+	btn5 = new Button
 			{
 				BackgroundColor = Color.PeachPuff,
 				TextColor = Color.HotPink,
@@ -175,7 +171,12 @@ namespace karusel
 							FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
 							HorizontalOptions = LayoutOptions.Center
 						},
-					}
+					new Image
+			{
+				Source = "temp.jpg",
+			},
+					btn5
+		}
 				}
 			};
 			Children.Add(holerContentPage);
